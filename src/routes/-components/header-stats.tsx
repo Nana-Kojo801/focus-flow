@@ -5,14 +5,7 @@ import db from '@/lib/db'
 import HeaderStatsSkeleton from './header-stats-skeleton'
 
 export default function HeaderStats() {
-  const sessions = useLiveQuery(() =>
-    db.sessions
-      .filter(
-        (session) =>
-          new Date(session.startTime).getDate() === new Date().getDate(),
-      )
-      .toArray(),
-  )
+  const sessions = useLiveQuery(() => db.sessions.toArray())
 
   const totalSessions =
     sessions?.filter((session) => session.completed).length || 0
@@ -31,7 +24,7 @@ export default function HeaderStats() {
   const totalBreaks =
     sessions?.filter((session) => session.type !== 'focus').length || 0
 
-    if(sessions === undefined) return <HeaderStatsSkeleton />
+  if (sessions === undefined) return <HeaderStatsSkeleton />
 
   return (
     <section className="w-full mb-4 md:mb-6">
