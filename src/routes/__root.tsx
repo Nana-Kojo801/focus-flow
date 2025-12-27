@@ -37,9 +37,10 @@ function RootLayout() {
       <header className="sticky top-0 z-50 w-full border-b border-border/10 bg-background/60 backdrop-blur-2xl">
         <div className="container max-w-5xl mx-auto flex h-14 md:h-16 items-center justify-between px-6">
           <div className="flex items-center gap-2 md:gap-3">
-            <div className="w-6 h-6 md:w-8 md:h-8 rounded-lg md:rounded-xl bg-brand-focus shadow-lg shadow-brand-focus/20 flex items-center justify-center">
-              <Timer className="w-4 h-4 md:w-5 md:h-5 text-white" />
-            </div>
+            <img
+              src="/icon-144x144.png"
+              className="w-7 h-7 md:w-9 md:h-9 rounded-lg"
+            />
             <span className="font-extrabold tracking-tighter text-lg md:text-xl">
               Focusflow
             </span>
@@ -69,7 +70,7 @@ function RootLayout() {
       </main>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="md:hidden fixed bottom-6 left-6 right-6 z-50 h-16 glass shadow-2xl rounded-[2rem] border border-white/10 flex items-center justify-around px-2 backdrop-blur-3xl">
+      <nav className="md:hidden fixed bottom-6 left-6 right-6 z-50 h-16 glass shadow-2xl rounded-4xl border border-white/10 flex items-center justify-around px-2 backdrop-blur-3xl">
         <NavLink to="/" icon={Timer}>
           Timer
         </NavLink>
